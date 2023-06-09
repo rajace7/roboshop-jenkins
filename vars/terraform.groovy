@@ -3,7 +3,7 @@ def call() {
 
         agent {
             node {
-                label 'workstation'
+                label 'rajesh_workstation'
             }
         }
 
