@@ -39,7 +39,13 @@ def call() {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
-
+            stage('Release Application') {
+                when {
+                    expression {
+                        env.TAG_NAME ==~ ".*"
+                    }
+                }
+            }
 
         }
 
