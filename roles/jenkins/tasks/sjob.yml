@@ -1,17 +1,3 @@
-#- name: Copy Xml File
-#  ansible.builtin.template:
-#    src: sjob.xml
-#    dest: /tmp/sjob.xml
-#
-#
-#- name: Create Jenkins Jobs
-#  community.general.jenkins_job:
-#    config: "{{ lookup('file', '/tmp/sjob.xml') }}"
-#    name: "{{item.job_name}}"
-#    password: admin123
-#    url: http://172.31.11.56:8080
-#    user: admin
-
 - name: Check if the Jenkins job exists or not
   community.general.jenkins_job_info:
     name: "{{item.job_name}}"
